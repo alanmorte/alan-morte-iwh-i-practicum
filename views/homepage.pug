@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .page
+      a.add-link(href="/update-cobj") Add to this table
+      h1 Custom Object Table
+      if error
+        p.error #{error}
+      table.records
+        thead
+          tr
+            th Name
+            th Status
+            th Notes
+        tbody
+          if data && data.length
+            each record in data
+              tr
+                td #{record.properties.name}
+                td #{record.properties.status}
+                td #{record.properties.notes}
+          else
+            tr
+              td.empty(colspan="3") No records yet. Use "Add to this table" to create one.
