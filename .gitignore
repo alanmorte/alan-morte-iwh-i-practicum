@@ -1,4 +1,8 @@
 .DS_Store
 node_modules
 package-lock.json
+
+# Never commit private app tokens or local secrets
 .env
+.env.local
+.env.*.local
