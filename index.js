@@ -33,7 +33,28 @@ function customObjectsListUrl() {
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
-// * Code for Route 1 goes here
+app.get('/', async (req, res) => {
+    try {
+        if (!PRIVATE_APP_ACCESS) {
+            return res.render('homepage', {
+                title: 'Custom Object Table',
+                data: [],
+                error: 'HUBSPOT_ACCESS_TOKEN is not set. Copy .env.example to .env and add your private app token locally. Do not commit the token.'
+            });
+        }
+
+        const resp = await axios.get(customObjectsListUrl(), { headers: hubspotHeaders() });
+        const data = resp.data.results;
+        res.render('homepage', { title: 'Custom Object Table', data });
+    } catch (error) {
+        console.error(error.response ? error.response.data : error.message);
+        res.status(500).render('homepage', {
+            title: 'Custom Object Table',
+            data: [],
+            error: 'Unable to load practicum_projects records from HubSpot.'
+        });
+    }
+});
 
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
