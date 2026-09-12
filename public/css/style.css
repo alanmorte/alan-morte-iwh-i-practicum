@@ -56,3 +56,63 @@ input[type="submit"] {
     padding: .375rem 1rem;
     margin-top: 10px;
 }
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.add-link,
+.return-link {
+    display: inline-block;
+    margin: 0.5rem 0 1rem;
+    color: #33475b;
+}
+
+.error {
+    color: #be4b08;
+    margin: 0 1rem 1rem;
+}
+
+table.records {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+}
+
+table.records th,
+table.records td {
+    border: 1px solid #d1d6dc;
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.records th {
+    background: #f5f8fa;
+}
+
+table.records .empty {
+    text-align: center;
+    color: #516f90;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: .25rem;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: #ff7a59;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
