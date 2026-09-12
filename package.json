@@ -1,7 +1,7 @@
 {
     "name": "integrating-with-hubspot-i-foundations-practicum",
     "version": "1.0.0",
-    "description": "",
+    "description": "Integrating With HubSpot I: Foundations practicum — local Express app for practicum_projects.",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
