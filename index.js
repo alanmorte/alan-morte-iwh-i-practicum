@@ -11,6 +11,7 @@ app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = process.env.HUBSPOT_ACCESS_TOKEN;
+// practicum_projects in developer TEST portal 52019510
 const OBJECT_TYPE_ID = process.env.HUBSPOT_OBJECT_TYPE_ID || '2-69154354';
 const PORT = process.env.PORT || 3000;
 const CUSTOM_OBJECT_PROPERTIES = ['name', 'status', 'notes'];
