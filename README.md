@@ -55,8 +55,9 @@ npm start
 
 5. Open http://localhost:3000
 
-- `/` lists `practicum_projects` records in **Custom Object Table**
-- `/update-cobj` is the create form titled `Update Custom Object Form | Integrating With HubSpot I Practicum.`
+- `GET /` lists `practicum_projects` records in **Custom Object Table**
+- `GET /update-cobj` is the create form titled `Update Custom Object Form | Integrating With HubSpot I Practicum.`
+- `POST /update-cobj` creates a CRM record via the HubSpot CRM v3 objects API, then redirects to `/`
 
 ## Pre-requisites:
 - Using [Node](https://nodejs.org/en/download) and node packages
