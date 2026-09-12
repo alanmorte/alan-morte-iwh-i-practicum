@@ -15,6 +15,22 @@ const OBJECT_TYPE_ID = process.env.HUBSPOT_OBJECT_TYPE_ID || '2-69154354';
 const PORT = process.env.PORT || 3000;
 const CUSTOM_OBJECT_PROPERTIES = ['name', 'status', 'notes'];
 
+function hubspotHeaders() {
+    return {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
+}
+
+function customObjectsEndpoint() {
+    return `https://api.hubapi.com/crm/v3/objects/${OBJECT_TYPE_ID}`;
+}
+
+function customObjectsListUrl() {
+    const properties = CUSTOM_OBJECT_PROPERTIES.join(',');
+    return `${customObjectsEndpoint()}?properties=${properties}&limit=100`;
+}
+
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
 // * Code for Route 1 goes here
