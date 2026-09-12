@@ -4,15 +4,59 @@ This repository is for the Integrating With HubSpot I: Foundations course. This 
 
 To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+**HubSpot developer TEST account custom objects list view:** https://app.hubspot.com/contacts/52019510/objects/2-69154354/views/all/list
+
+Custom object: `practicum_projects` (`objectTypeId` `2-69154354`)  
+Properties: `name`, `status`, `notes` (associated to CONTACT)
+
+This app is a local draft for Alan's review. It talks to developer TEST portal `52019510` only.
 
 ___
 ## Tips:
 - Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
 - The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
+- Create a HubSpot developer test account and a private app. Store the private app access token in a local `.env` file only.
+- **DO NOT commit your private app access token.** Never put the token in `index.js`, README, git history, or any committed file. `.gitignore` excludes `.env`.
 - Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
+
+## Local setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Copy the example env file and add your **local** private app token. Leave the committed `.env.example` token empty.
+
+```bash
+cp .env.example .env
+```
+
+3. In `.env`, set:
+
+```
+HUBSPOT_ACCESS_TOKEN=your-token-goes-here-locally-only
+HUBSPOT_OBJECT_TYPE_ID=2-69154354
+PORT=3000
+```
+
+4. Start the app:
+
+```bash
+node index.js
+```
+
+Or:
+
+```bash
+npm start
+```
+
+5. Open http://localhost:3000
+
+- `/` lists `practicum_projects` records in **Custom Object Table**
+- `/update-cobj` is the create form titled `Update Custom Object Form | Integrating With HubSpot I Practicum.`
 
 ## Pre-requisites:
 - Using [Node](https://nodejs.org/en/download) and node packages
